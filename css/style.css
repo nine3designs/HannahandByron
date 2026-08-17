@@ -95,7 +95,7 @@ a{ color: inherit; text-decoration: none; }
 }
 
 @media (prefers-reduced-motion: reduce){
-  *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior:auto !important; }
+  *{ animation-duration: 0.012ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior:auto !important; }
 }
 
 /* ==========================================================================
@@ -160,13 +160,13 @@ a{ color: inherit; text-decoration: none; }
   .spray-img{
     position: fixed;
     top: auto;
-    bottom: -33%;
+    bottom: -40%;
     transform: none;
     width: 130px;
     height: auto;
   }
-  .spray-img--left{ left: -10%; }
-  .spray-img--right{ right: -10%; }
+  .spray-img--left{ left: -22%; }
+  .spray-img--right{ right: -22%; }
 }
 
 /* ==========================================================================
