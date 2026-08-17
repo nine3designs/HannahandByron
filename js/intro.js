@@ -5,15 +5,20 @@
  * The intro plays once per browser session.
  * Remove sessionStorage logic if you want it to play every visit.
  */
-
 document.addEventListener("DOMContentLoaded", () => {
+
+  /*
+   * Envelope intro is MOBILE ONLY.
+   * Desktop users go straight to the normal website.
+   */
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    return;
+  }
 
   const intro = document.getElementById("intro-envelope");
   const seal = document.getElementById("intro-seal");
 
   if (!intro || !seal) return;
-
-
   /* ---------------------------------------------------------
      Skip intro if already opened during this session
      --------------------------------------------------------- */
