@@ -750,16 +750,16 @@ a{ color: inherit; text-decoration: none; }
     height: auto;
     top: auto;
     transform: none;
-    bottom: -18px;
+    bottom: -118px;
     z-index: 1;
   }
 
   .spray-img--left{
-    left: -78px;
+    left: -158px;
   }
 
   .spray-img--right{
-    right: -78px;
+    right: -158px;
   }
 
   .landing .teaser{
