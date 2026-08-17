@@ -2858,7 +2858,43 @@ select:focus-visible {
       rotate(4deg) !important;
   }
 
+@media (max-width: 780px) {
 
+  .spray-img {
+    width: 170px !important;
+    bottom: -35px !important;
+  }
+
+  .spray-img--left {
+    left: -38px !important;
+    bottom: -35px !important;
+  }
+
+  .spray-img--right {
+    right: -38px !important;
+    bottom: -35px !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .spray-img {
+    width: 165px !important;
+    bottom: -35px !important;
+  }
+
+  .spray-img--left {
+    left: -36px !important;
+    bottom: -35px !important;
+  }
+
+  .spray-img--right {
+    right: -36px !important;
+    bottom: -35px !important;
+  }
+
+}
   /* ------------------------------------------------------------------------
      LOCK OVERLAY
      ------------------------------------------------------------------------ */
