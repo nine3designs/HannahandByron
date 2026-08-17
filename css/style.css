@@ -167,7 +167,7 @@ a{ color: inherit; text-decoration: none; }
 .sprig--right{ top: 6%; right: 2%; transform: scaleX(-1); }
 
 @media (max-width: 520px){
-  .spray-img{ width: clamp(100px, 34%, 110px); max-height: 34vh; }
+.spray-img{ width: clamp(120px, 40%, 150px); max-height: 34vh; }
   .spray-img--left{ left: -6%; }
   .spray-img--right{ right: -6%; }
 }
