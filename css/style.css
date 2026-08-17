@@ -165,8 +165,8 @@ a{ color: inherit; text-decoration: none; }
 }
 .sprig--left{ top: 6%; left: 2%; }
 .sprig--right{ top: 6%; right: 2%; transform: scaleX(-1); }
-@media (max-width: 500px){
-  .spray-img{ width: clamp(100px, 34%, 170px); max-height: 34vh; }
+@media (max-width: 340px){
+  .spray-img{ width: clamp(100px, 34%, 110px); max-height: 34vh; }
 }
 .sprig{
   position: absolute;
@@ -178,13 +178,13 @@ a{ color: inherit; text-decoration: none; }
 }
 .sprig--left{ top: 6%; left: 2%; }
 .sprig--right{ top: 6%; right: 2%; transform: scaleX(-1); }
-@media (max-width: 520px){
+@media (max-width: 320px){
   .spray{ width: clamp(105px, 34vw, 165px); }
   .landing{ padding-top: 3rem; padding-bottom: 5.5rem; }
   .landing .frame{ padding-left: 1.1rem; padding-right: 1.1rem; }
 }
 @media (max-width: 360px){
-  .spray{ width: 80vw; }
+  .spray{ width: 100vw; }
 }
 /* ==========================================================================
 /* ==========================================================================
