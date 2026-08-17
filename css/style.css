@@ -885,11 +885,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .spray-img--left{
-    left: -200px;
+    left: -80px;
   }
 
   .spray-img--right{
-    right: -200px;
+    right: -80px;
   }
 
   .landing .teaser{
@@ -932,11 +932,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .spray-img--left{
-    left: -190px;
+    left: -90px;
   }
 
   .spray-img--right{
-    right: -190px;
+    right: -90px;
   }
 
   .seal-trigger .seal{
