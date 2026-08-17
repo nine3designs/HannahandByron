@@ -74,7 +74,7 @@ body{
   text-rendering: optimizeLegibility;
 }
 
-img, svg{ display:block; max-width:80%; }
+img, svg{ display:block; max-width:100%; }
 
 a{ color: inherit; text-decoration: none; }
 
@@ -142,17 +142,18 @@ a{ color: inherit; text-decoration: none; }
 /* two-image side sprays (left = floral1.png, right = floral2.png) */
 .spray-img{
   position: absolute;
-  top: 85%;
+  top: 100%;
   transform: translateY(-50%);
-  width:fit-content;
+  width: auto;
+  max-width: none;
   max-height: 200vh;
-  height: fit-content;
-  pointer-events:none;
+  height: auto;
+  pointer-events: none;
   z-index: 1;
   filter: drop-shadow(0 10px 16px rgba(46,42,34,0.12));
 }
-.spray-img--left{left: -30%; }
-.spray-img--right{right: -30%; }
+.spray-img--left{ left: -70%; }
+.spray-img--right{ right: -70%; }
 
 .sprig{
   position: absolute;
@@ -165,6 +166,65 @@ a{ color: inherit; text-decoration: none; }
 .sprig--left{ top: 6%; left: 2%; }
 .sprig--right{ top: 6%; right: 2%; transform: scaleX(-1); }
 
+/* Mobile floral positioning is intentionally kept close to the viewport.
+   The desktop -70% offsets push the sprays completely off small screens. */
+@media (max-width: 520px){
+  .landing{
+    min-height: 100svh;
+    padding: 2rem 0 4rem;
+    justify-content: center;
+  }
+
+  .landing .frame{
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  .spray-img{
+    width: clamp(125px, 40vw, 175px);
+    max-height: 36vh;
+    top: 100%;
+  }
+
+  .spray-img--left{ left: -12%; }
+  .spray-img--right{ right: -12%; }
+
+  .landing .teaser{
+    margin-top: 1.2rem;
+  }
+
+  .landing .teaser p{
+    font-size: 0.88rem;
+  }
+
+  .lock-close{
+    top: -10px;
+    right: -4px;
+  }
+}
+
+@media (max-width: 360px){
+  .landing{
+    padding-bottom: 4.5rem;
+  }
+
+  .landing .frame{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .landing .names{
+    font-size: clamp(2.5rem, 13vw, 3.5rem);
+  }
+
+  .spray-img{
+    width: 145px;
+  }
+
+  .spray-img--left{ left: -16%; }
+  .spray-img--right{ right: -16%; }
+}
+
 /* ==========================================================================
    Site chrome: nav + footer (main site, post-unlock)
    ========================================================================== */
@@ -172,6 +232,8 @@ a{ color: inherit; text-decoration: none; }
 .site-header{
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 40;
   display:flex;
   align-items:center;
@@ -232,6 +294,7 @@ a{ color: inherit; text-decoration: none; }
   .nav-toggle{ display:block; }
   .site-nav{
     position: fixed; inset: 64px 0 0 0;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -584,6 +647,11 @@ a{ color: inherit; text-decoration: none; }
 
 @media (max-width: 640px){
   .form-grid{ grid-template-columns: 1fr; }
+
+  .radio-group{
+    flex-direction: column;
+    gap: 0.75rem;
+  }
 }
 
 .form-note{
@@ -841,86 +909,171 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ==========================================================================
-   FINAL MOBILE SAVE THE DATE
-   Desktop layout and desktop floral positioning are unchanged.
+   Final mobile refinements
    ========================================================================== */
 
-@media (max-width: 520px){
-
-  .landing{
-    min-height: 100svh;
-    height: 100svh;
-    overflow: hidden;
-    position: relative;
+@media (max-width: 780px){
+  .site-header .monogram{
+    padding-right: 0;
   }
 
-  /*
-     Keep the invitation content above the floral artwork.
-  */
-  .landing .frame{
-    position: relative;
-    z-index: 3;
-  }
-
-  /*
-     Floral artwork:
-     Large arrangements pushed outwards so the two sides remain
-     clearly separated in the centre, like the supplied reference.
-  */
-  .spray-img{
-    position: fixed;
-    top: auto;
-    bottom: -70px;
-    width: 540px;
-    max-width: none;
-    max-height: none;
-    height: auto;
-    transform: none;
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .spray-img--left{
-    left: -100px;
-  }
-
-  .spray-img--right{
-    right: -100px;
-  }
-
-  .landing .teaser{
-    position: relative;
-    z-index: 4;
-  }
-
-  .seal-trigger{
-    position: relative;
-    z-index: 5;
-  }
-
-  .lock-close{
-    top: -10px;
-    right: -4px;
+  .site-nav a{
+    padding: 0.45rem 0;
   }
 }
 
+@media (max-width: 520px){
+  .page-hero{
+    padding: 6.5rem 1.25rem 2.5rem;
+  }
 
-/* --------------------------------------------------------------------------
-   Very small phones
-   -------------------------------------------------------------------------- */
+  .section{
+    padding: 2.75rem 1.15rem;
+  }
+
+  .countdown{
+    gap: 0.8rem;
+  }
+
+  .countdown .unit{
+    min-width: 56px;
+  }
+
+  .countdown .num{
+    font-size: 2rem;
+  }
+
+  .timeline{
+    margin-top: 2rem;
+  }
+
+  .timeline::before{
+    left: 68px;
+  }
+
+  .timeline-item{
+    grid-template-columns: 55px 27px 1fr;
+    gap: 0 0.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .timeline-item .time{
+    font-size: 0.92rem;
+  }
+
+  .card-grid{
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-card{
+    padding: 1.6rem 1.3rem;
+  }
+
+  .story-block{
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .landing .frame{
+    width: 100%;
+    max-width: 560px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .invite-stage{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .landing .eyebrow{
+    font-size: 1.08rem;
+  }
+
+  .landing .date-line{
+    margin: 1.15rem 0 1rem;
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+
+  .landing .venue{
+    margin-top: 0.9rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .landing .teaser p{
+    margin-bottom: 0.8rem;
+  }
+
+  .seal-trigger{
+    gap: 1.25rem;
+    font-size: 0.78rem;
+  }
+
+  .seal-trigger .seal{
+    width: 68px;
+    height: 68px;
+    font-size: 1.15rem;
+  }
+
+  .lock-overlay{
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .envelope{
+    width: min(420px, 100%);
+    max-height: calc(100svh - 2rem);
+  }
+
+  .envelope-back,
+  .envelope-flap{
+    height: 110px;
+  }
+
+  .envelope-card{
+    margin-top: -12px;
+    padding: 2rem 1.15rem 1.5rem;
+  }
+
+  .envelope-card h2{
+    font-size: 1.35rem;
+    margin-bottom: 1.1rem;
+  }
+
+  #lock-form{
+    gap: 0.75rem;
+  }
+
+  #lock-form input{
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .lock-close{
+    top: -8px;
+    right: -2px;
+    width: 32px;
+    height: 32px;
+  }
+}
 
 @media (max-width: 380px){
+  .landing .names{
+    font-size: clamp(2.35rem, 13vw, 3.25rem);
+  }
+
+  .landing .eyebrow{
+    font-size: 1rem;
+  }
+
+  .landing .date-line{
+    letter-spacing: 0.22em;
+  }
 
   .spray-img{
-    width: 500px;
-    bottom: -5px;
-  }
-
-  .spray-img--left{
-    left: -100px;
-  }
-
-  .spray-img--right{
-    right: -110px;
+    width: 135px;
   }
 }
