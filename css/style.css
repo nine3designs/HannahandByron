@@ -154,10 +154,6 @@ a{ color: inherit; text-decoration: none; }
 .spray-img--left{left: -70%; }
 .spray-img--right{right: -70%; }
 
-@media (max-width: 600px){
-  .spray-img{ width: clamp(100px, 34%, 170px); max-height: 125vh; }
-}
-
 .sprig{
   position: absolute;
   width: clamp(64px, 7vw, 100px);
