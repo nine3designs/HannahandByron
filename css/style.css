@@ -870,7 +870,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .spray-img{
     position: fixed;
     top: auto;
-    bottom: -5px;
+    bottom: -70px;
     width: 540px;
     max-width: none;
     max-height: none;
@@ -881,11 +881,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .spray-img--left{
-    left: -330px;
+    left: -100px;
   }
 
   .spray-img--right{
-    right: -330px;
+    right: -100px;
   }
 
   .landing .teaser{
@@ -917,10 +917,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .spray-img--left{
-    left: -310px;
+    left: -100px;
   }
 
   .spray-img--right{
-    right: -310px;
+    right: -110px;
   }
 }
