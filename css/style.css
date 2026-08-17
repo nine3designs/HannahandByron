@@ -160,13 +160,13 @@ a{ color: inherit; text-decoration: none; }
   .spray-img{
     position: fixed;
     top: auto;
-    bottom: -10%;
+    bottom: -8%;
     transform: none;
     width: 130px;
     height: auto;
   }
-  .spray-img--left{ left: -1%; }
-  .spray-img--right{ right: -1%; }
+  .spray-img--left{ left: -25%; }
+  .spray-img--right{ right: -24%; }
 }
 
 /* ==========================================================================
