@@ -845,7 +845,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    Desktop layout and desktop floral positioning are unchanged.
    ========================================================================== */
 
-@media (max-width: 520px){}
+@media (max-width: 520px){
 
   .landing{
     min-height: 100svh;
@@ -861,3 +861,66 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     position: relative;
     z-index: 3;
   }
+
+  /*
+     Floral artwork:
+     Large arrangements pushed outwards so the two sides remain
+     clearly separated in the centre, like the supplied reference.
+  */
+  .spray-img{
+    position: fixed;
+    top: auto;
+    bottom: -5px;
+    width: 540px;
+    max-width: none;
+    max-height: none;
+    height: auto;
+    transform: none;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .spray-img--left{
+    left: -330px;
+  }
+
+  .spray-img--right{
+    right: -330px;
+  }
+
+  .landing .teaser{
+    position: relative;
+    z-index: 4;
+  }
+
+  .seal-trigger{
+    position: relative;
+    z-index: 5;
+  }
+
+  .lock-close{
+    top: -10px;
+    right: -4px;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Very small phones
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 380px){
+
+  .spray-img{
+    width: 500px;
+    bottom: -5px;
+  }
+
+  .spray-img--left{
+    left: -310px;
+  }
+
+  .spray-img--right{
+    right: -310px;
+  }
+}
