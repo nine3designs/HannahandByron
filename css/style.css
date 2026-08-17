@@ -1138,16 +1138,6 @@ a {
   text-align: center;
 }
 
-.landing .frame::before,
-.landing .frame::after {
-  content: "";
-
-  position: absolute;
-
-  pointer-events: none;
-
-  border: 0;
-}
 
 .landing .frame::before {
   inset: 0;
