@@ -235,7 +235,7 @@ a{ color: inherit; text-decoration: none; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.6rem;
+    gap: 1.2rem;
     font-size: 0.95rem;
     background: var(--cream-soft);
     transform: translateY(-8px);
