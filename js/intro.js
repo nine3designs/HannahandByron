@@ -1,27 +1,41 @@
-/**
- * Hannah & Byron
- * Opening envelope intro animation
- *
- * The intro plays once per browser session.
- * Remove sessionStorage logic if you want it to play every visit.
- */
 document.addEventListener("DOMContentLoaded", () => {
 
   /*
-   * Envelope intro is MOBILE ONLY.
-   * Desktop users go straight to the normal website.
+   * ---------------------------------------------------------
+   * DESKTOP
+   * ---------------------------------------------------------
+   *
+   * Desktop does NOT show the envelope animation.
+   * The normal index.html page loads immediately.
    */
+
   if (window.matchMedia("(min-width: 769px)").matches) {
+    const intro = document.getElementById("intro-envelope");
+
+    if (intro) {
+      intro.remove();
+    }
+
     return;
   }
+
+
+  /*
+   * ---------------------------------------------------------
+   * MOBILE
+   * ---------------------------------------------------------
+   */
 
   const intro = document.getElementById("intro-envelope");
   const seal = document.getElementById("intro-seal");
 
   if (!intro || !seal) return;
-  /* ---------------------------------------------------------
-     Skip intro if already opened during this session
-     --------------------------------------------------------- */
+
+
+  /*
+   * If the invitation has already been opened during
+   * this browser session, don't show the animation again.
+   */
 
   if (sessionStorage.getItem("hb-intro-opened") === "true") {
     intro.remove();
@@ -29,53 +43,58 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ---------------------------------------------------------
-     Open animation
-     --------------------------------------------------------- */
+  /*
+   * ---------------------------------------------------------
+   * OPEN INVITATION
+   * ---------------------------------------------------------
+   */
 
   const openInvitation = () => {
 
-    if (intro.classList.contains("is-opening")) return;
+    if (intro.classList.contains("is-opening")) {
+      return;
+    }
 
     intro.classList.add("is-opening");
 
-    /*
-      Allow the flap/card animation to play before
-      removing the intro completely.
-    */
 
-    window.setTimeout(() => {
+    /*
+     * Let the envelope animation play.
+     */
+
+    setTimeout(() => {
       intro.classList.add("is-complete");
     }, 1700);
 
 
     /*
-      Remove it from the DOM after the fade-out.
-    */
+     * Remove the intro completely after
+     * the fade-out has finished.
+     */
 
-    window.setTimeout(() => {
+    setTimeout(() => {
       intro.remove();
     }, 2700);
 
 
     /*
-      Remember that this visitor has opened the invitation.
-    */
+     * Remember that the visitor has opened it.
+     */
 
     sessionStorage.setItem("hb-intro-opened", "true");
   };
 
 
-  /* ---------------------------------------------------------
-     Click / touch
-     --------------------------------------------------------- */
+  /*
+   * Mouse / touch
+   */
 
   seal.addEventListener("click", openInvitation);
 
 
   /*
-    Keyboard accessibility
-  */
+   * Keyboard accessibility
+   */
 
   seal.addEventListener("keydown", (event) => {
 
@@ -83,8 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
       event.key === "Enter" ||
       event.key === " "
     ) {
+
       event.preventDefault();
+
       openInvitation();
+
     }
 
   });
