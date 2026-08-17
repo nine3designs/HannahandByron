@@ -840,21 +840,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline-offset: 3px;
 }
 
-
 /* ==========================================================================
-   FINAL MOBILE SAVE THE DATE REFINEMENTS
-   Desktop layout and desktop floral positioning remain unchanged.
+   MOBILE SAVE THE DATE — REFERENCE-MATCHED FLORALS
+   Desktop styles above are intentionally unchanged.
    ========================================================================== */
-
-@media (max-width: 780px){
-  .site-header .monogram{
-    padding-right: 0;
-  }
-
-  .site-nav a{
-    padding: 0.45rem 0;
-  }
-}
 
 @media (max-width: 520px){
 
@@ -864,36 +853,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     padding: 0;
     justify-content: center;
     overflow: hidden;
+    position: relative;
   }
 
   .landing .frame{
     width: 100%;
     max-width: 560px;
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem 1.5rem;
+    position: relative;
+    z-index: 2;
   }
 
   /*
-     IMPORTANT:
-     On mobile the invite stage must not be the positioning container
-     for the flowers. This makes the flowers position against the full
-     landing screen instead.
-  */
-  .invite-stage{
-    position: static;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /*
-     MOBILE FLOWERS
-     Large, low and tucked into both bottom corners.
-     Desktop values above remain untouched.
+     The floral PNGs are deliberately kept mostly off-screen.
+     This recreates the reference image: stems begin around the
+     lower-middle of the page, while the full bouquets build into
+     the bottom corners without filling the centre.
   */
   .spray-img{
     position: fixed;
     top: auto;
-    bottom: -72px;
-    width: 380px;
+    bottom: -180px;
+    width: 360px;
     max-width: none;
     max-height: none;
     height: auto;
@@ -904,152 +885,39 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   .spray-img--left{
-    left: -105px;
+    left: -200px;
   }
 
   .spray-img--right{
-    right: -105px;
+    right: -200px;
   }
 
-  /*
-     Keep all important Save the Date content above the flowers.
-  */
   .landing .teaser{
     position: relative;
     z-index: 3;
     margin-top: 0.8rem;
   }
 
-  .landing .teaser p{
-    font-size: 0.88rem;
-    margin-bottom: 0.9rem;
-  }
-
   .seal-trigger{
-    gap: 1.35rem;
-    font-size: 0.8rem;
+    position: relative;
+    z-index: 4;
   }
 
   .seal-trigger .seal{
     width: 100px;
     height: 100px;
-    font-size: 1.2rem;
   }
 
   .lock-close{
     top: -10px;
     right: -4px;
   }
-
-  .page-hero{
-    padding: 6.5rem 1.25rem 2.5rem;
-  }
-
-  .section{
-    padding: 2.75rem 1.15rem;
-  }
-
-  .countdown{
-    gap: 0.8rem;
-  }
-
-  .countdown .unit{
-    min-width: 56px;
-  }
-
-  .countdown .num{
-    font-size: 2rem;
-  }
-
-  .timeline{
-    margin-top: 2rem;
-  }
-
-  .timeline::before{
-    left: 68px;
-  }
-
-  .timeline-item{
-    grid-template-columns: 55px 27px 1fr;
-    gap: 0 0.75rem;
-    padding-bottom: 2rem;
-  }
-
-  .timeline-item .time{
-    font-size: 0.92rem;
-  }
-
-  .card-grid{
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .info-card{
-    padding: 1.6rem 1.3rem;
-  }
-
-  .story-block{
-    gap: 1.5rem;
-    padding: 2rem 0;
-  }
-
-  .landing .eyebrow{
-    font-size: 1.08rem;
-  }
-
-  .landing .date-line{
-    margin: 1.15rem 0 1rem;
-    font-size: 0.78rem;
-    line-height: 1.6;
-  }
-
-  .landing .venue{
-    margin-top: 0.9rem;
-    font-size: 0.78rem;
-    line-height: 1.5;
-  }
-
-  .lock-overlay{
-    padding: 1rem;
-    align-items: center;
-  }
-
-  .envelope{
-    width: min(420px, 100%);
-    max-height: calc(100svh - 2rem);
-  }
-
-  .envelope-back,
-  .envelope-flap{
-    height: 110px;
-  }
-
-  .envelope-card{
-    margin-top: -12px;
-    padding: 2rem 1.15rem 1.5rem;
-  }
-
-  .envelope-card h2{
-    font-size: 1.35rem;
-    margin-bottom: 1.1rem;
-  }
-
-  #lock-form{
-    gap: 0.75rem;
-  }
-
-  #lock-form input{
-    min-height: 48px;
-    font-size: 16px;
-  }
-
-  .lock-close{
-    top: -8px;
-    right: -2px;
-    width: 32px;
-    height: 32px;
-  }
 }
+
+
+/* --------------------------------------------------------------------------
+   Very small phones
+   -------------------------------------------------------------------------- */
 
 @media (max-width: 380px){
 
@@ -1058,34 +926,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     padding-right: 0.75rem;
   }
 
-  .landing .names{
-    font-size: clamp(2.35rem, 13vw, 3.25rem);
-  }
-
-  .landing .eyebrow{
-    font-size: 1rem;
-  }
-
-  .landing .date-line{
-    letter-spacing: 0.22em;
-  }
-
   .spray-img{
-    width: 345px;
-    bottom: -68px;
+    width: 340px;
+    bottom: -170px;
   }
 
   .spray-img--left{
-    left: -100px;
+    left: -190px;
   }
 
   .spray-img--right{
-    right: -100px;
-  }
-
-  .seal-trigger{
-    gap: 1.2rem;
-    font-size: 0.76rem;
+    right: -190px;
   }
 
   .seal-trigger .seal{
