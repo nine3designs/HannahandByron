@@ -142,7 +142,6 @@ a{ color: inherit; text-decoration: none; }
 /* two-image side sprays (left = floral1.png, right = floral2.png) */
 .spray-img{
   position: absolute;
-   bottom: -2%;
   top: 100%;
   transform: translateY(-50%);
   width: auto;
@@ -168,9 +167,9 @@ a{ color: inherit; text-decoration: none; }
 .sprig--right{ top: 8%; right: 2%; transform: scaleX(-1); }
 
 @media (max-width: 520px){
-  .spray-img{ width: clamp(100px, 34%, 110px); max-height: 34vh; }
-  .spray-img--left{ left: -6%; }
-  .spray-img--right{ right: -6%; }
+.spray-img{ width: clamp(120px, 40%, 150px); max-height: 75vh; }
+  .spray-img--left{ left: -8%; }
+  .spray-img--right{ right: -8%; }
 }
 /* ==========================================================================
 /* ==========================================================================
