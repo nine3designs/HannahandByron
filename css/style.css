@@ -2808,7 +2808,7 @@ select:focus-visible {
     position: fixed !important;
 
     top: auto !important;
-    bottom: -55px !important;
+    bottom: -35px !important;
 
     width: 155px !important;
     height: auto !important;
@@ -2839,7 +2839,7 @@ select:focus-visible {
     right: auto !important;
 
     top: auto !important;
-    bottom: -55px !important;
+    bottom: -35px !important;
 
     transform:
       rotate(-4deg) !important;
@@ -2852,7 +2852,7 @@ select:focus-visible {
     left: auto !important;
 
     top: auto !important;
-    bottom: -55px !important;
+    bottom: -35px !important;
 
     transform:
       rotate(4deg) !important;
