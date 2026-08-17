@@ -1,4 +1,4 @@
-/* ==========================================================================
+e/* ==========================================================================
    Hannah & Byron — 28.05.27
    Design system: warm ecru paper, hand-set serif + botanical line accents.
    ========================================================================== */
@@ -160,13 +160,13 @@ a{ color: inherit; text-decoration: none; }
   .spray-img{
     position: fixed;
     top: auto;
-    bottom: -19%;
+    bottom: auto;
     transform: none;
     width: 135px;
     height: auto;
   }
-  .spray-img--left{ left: -15%; }
-  .spray-img--right{ right: -15%; }
+  .spray-img--left{ left: -99%; }
+  .spray-img--right{ right: -66%; }
 }
 
 /* ==========================================================================
