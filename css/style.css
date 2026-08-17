@@ -162,44 +162,65 @@ Bottom of sprays sit on the bottom edge of the screen
 Slightly closer together (adjust horizontal values as needed)
 ================================================================ */
 
-@media (max-width: 768px) {
-    .spray-img {
-        position: fixed;
-        left: auto;
-        right: auto;
-        bottom: -48px;        /* anchor to bottom of screen */
-          width: 160p;      /* adjust size on mobile */
-        max-width: none;
-        pointer-events: none;
-        z-index: 1;
-    }
+/* =========================================================
+   MOBILE FLORAL SPRAYS
+   Fixed to the bottom edge of the screen
+   ========================================================= */
 
-    .spray-img--left {
-        left: -24px;          /* move closer to center */
-        transform: translateY(0) rotate(-6deg);
-    }
+@media (max-width: 780px) {
 
-    .spray-img--right {
-        right: -24px;        /* move closer to center */
-        transform: translateY(0) rotate(6deg);
-    }
+  .spray-img {
+    position: fixed !important;
+
+    top: auto !important;
+    bottom: -12px !important;
+
+    width: 155px !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    transform: none !important;
+
+    pointer-events: none;
+
+    z-index: 5;
+  }
+
+  /* LEFT SPRAY */
+  .spray-img--left {
+    left: -45px !important;
+    right: auto !important;
+  }
+
+  /* RIGHT SPRAY */
+  .spray-img--right {
+    right: -45px !important;
+    left: auto !important;
+  }
 }
+
+
+/* =========================================================
+   SMALLER PHONES
+   ========================================================= */
 
 @media (max-width: 480px) {
-    .spray-img {
-        width: 120px;              /* slightly smaller on smaller phones */
-    }
 
-    .spray-img--left {
-        left: -16px;
-    }
+  .spray-img {
+    width: 150px !important;
+    bottom: -12px !important;
+  }
 
-    .spray-img--right {
-        right: -16px;
-    }
+  .spray-img--left {
+    left: -42px !important;
+  }
+
+  .spray-img--right {
+    right: -42px !important;
+  }
 }
-
-
 
    Site chrome: nav + footer (main site, post-unlock)
    ========================================================================== */
