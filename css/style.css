@@ -2808,7 +2808,7 @@ select:focus-visible {
     position: fixed !important;
 
     top: auto !important;
-    bottom: -40px !important;
+    bottom: -55 !important;
 
     width: 155px !important;
     height: auto !important;
