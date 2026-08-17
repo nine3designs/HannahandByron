@@ -165,8 +165,8 @@ a{ color: inherit; text-decoration: none; }
     width: 130px;
     height: auto;
   }
-  .spray-img--left{ left: -2%; }
-  .spray-img--right{ right: -2%; }
+  .spray-img--left{ left: 3%; }
+  .spray-img--right{ right: 3%; }
 }
 
 /* ==========================================================================
