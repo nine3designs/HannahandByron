@@ -859,35 +859,47 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
    INTRO ENVELOPE
    First-visit invitation opening animation
    ========================================================================== */
+/* =========================================================
+   INTRO ENVELOPE — MOBILE ONLY
+   ========================================================= */
 
 .intro-envelope{
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--cream);
-  overflow: hidden;
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity 0.9s ease,
-    visibility 0.9s ease;
+  display: none;
 }
 
-.intro-envelope.is-opening{
-  pointer-events: none;
+@media (max-width: 768px){
+
+  .intro-envelope{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cream);
+    overflow: hidden;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+      opacity 0.9s ease,
+      visibility 0.9s ease;
+  }
+
+  .intro-envelope.is-opening{
+    pointer-events: none;
+  }
+
+  .intro-envelope.is-complete{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
-
-.intro-envelope.is-complete{
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-
 /* --------------------------------------------------------------------------
    Envelope scene
    -------------------------------------------------------------------------- */
