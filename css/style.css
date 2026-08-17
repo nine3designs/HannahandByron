@@ -855,3 +855,453 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
+/* ==========================================================================
+   INTRO ENVELOPE
+   First-visit invitation opening animation
+   ========================================================================== */
+
+.intro-envelope{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.9s ease,
+    visibility 0.9s ease;
+}
+
+.intro-envelope.is-opening{
+  pointer-events: none;
+}
+
+.intro-envelope.is-complete{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   Envelope scene
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__scene{
+  position: relative;
+  width: min(82vw, 390px);
+  height: min(58vw, 275px);
+  perspective: 1200px;
+  filter: drop-shadow(0 28px 35px rgba(46,42,34,0.18));
+}
+
+
+/* --------------------------------------------------------------------------
+   Invitation card
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__card{
+  position: absolute;
+  z-index: 1;
+  left: 8%;
+  right: 8%;
+  bottom: 8%;
+  height: 84%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f8f1e6 100%
+    );
+
+  border: 1px solid rgba(46,42,34,0.08);
+
+  color: var(--ink);
+
+  transform:
+    translateY(25px)
+    scale(0.96);
+
+  transition:
+    transform 1.15s cubic-bezier(.22,.61,.36,1),
+    box-shadow 1s ease;
+}
+
+.intro-envelope__card-small{
+  margin-bottom: 0.7rem;
+
+  font-family: var(--font-label);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: var(--rose);
+}
+
+.intro-envelope__card strong{
+  font-family: var(--font-seasons);
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.intro-envelope__and{
+  margin: 0.25rem 0;
+
+  font-family: var(--font-meow);
+  font-size: 1.25rem;
+  color: var(--gold);
+}
+
+.intro-envelope__date{
+  margin-top: 1rem;
+
+  font-family: var(--font-label);
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+}
+
+
+/* --------------------------------------------------------------------------
+   Envelope body
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__body{
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  background:
+    linear-gradient(
+      145deg,
+      #efe4d2 0%,
+      #e7d9c4 100%
+    );
+
+  border: 1px solid rgba(46,42,34,0.12);
+
+  overflow: hidden;
+}
+
+
+/* Envelope diagonal folds */
+
+.intro-envelope__body::before,
+.intro-envelope__body::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+
+  width: 72%;
+  height: 2px;
+
+  background: rgba(46,42,34,0.12);
+}
+
+.intro-envelope__body::before{
+  left: -8%;
+  transform: rotate(28deg);
+  transform-origin: left center;
+}
+
+.intro-envelope__body::after{
+  right: -8%;
+  transform: rotate(-28deg);
+  transform-origin: right center;
+}
+
+
+/* --------------------------------------------------------------------------
+   Envelope flap
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__flap{
+  position: absolute;
+  z-index: 5;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 58%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5ead9 0%,
+      #e8dbc7 100%
+    );
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
+  transform-origin: top center;
+
+  transition:
+    transform 1s cubic-bezier(.22,.61,.36,1),
+    z-index 0s linear 0.35s;
+}
+
+
+/* --------------------------------------------------------------------------
+   Wax seal
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__seal{
+  position: absolute;
+  z-index: 8;
+
+  left: 50%;
+  top: 51%;
+
+  width: 78px;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #9b9872 0%,
+      #777b58 45%,
+      #5d6345 100%
+    );
+
+  color: #f8f1e6;
+
+  font-family: var(--font-seasons);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transform: translate(-50%, -50%);
+
+  box-shadow:
+    0 8px 16px rgba(46,42,34,0.22),
+    inset 0 2px 2px rgba(255,255,255,0.2);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.4s ease;
+}
+
+.intro-envelope__seal::before{
+  content: "";
+  position: absolute;
+  inset: 6px;
+
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+.intro-envelope__seal span{
+  position: relative;
+  z-index: 2;
+}
+
+.intro-envelope__seal:hover{
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow:
+    0 12px 24px rgba(46,42,34,0.26),
+    inset 0 2px 2px rgba(255,255,255,0.2);
+}
+
+.intro-envelope__seal:active{
+  transform: translate(-50%, -50%) scale(0.94);
+}
+
+
+/* Gentle pulse before opening */
+
+.intro-envelope:not(.is-opening) .intro-envelope__seal{
+  animation: introSealPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes introSealPulse{
+  0%, 100%{
+    box-shadow:
+      0 8px 16px rgba(46,42,34,0.22),
+      inset 0 2px 2px rgba(255,255,255,0.2);
+  }
+
+  50%{
+    box-shadow:
+      0 12px 24px rgba(46,42,34,0.28),
+      0 0 0 7px rgba(124,135,96,0.08),
+      inset 0 2px 2px rgba(255,255,255,0.2);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Instruction
+   -------------------------------------------------------------------------- */
+
+.intro-envelope__instruction{
+  margin: 2rem 0 0;
+
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+
+  color: var(--ink-faint);
+
+  opacity: 0.9;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* ==========================================================================
+   OPENING ANIMATION
+   ========================================================================== */
+
+.intro-envelope.is-opening .intro-envelope__instruction{
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+
+/* Wax seal lifts/fades */
+
+.intro-envelope.is-opening .intro-envelope__seal{
+  animation: none;
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.35)
+    rotate(8deg);
+
+  transition:
+    opacity 0.35s ease 0.05s,
+    transform 0.45s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* Flap opens */
+
+.intro-envelope.is-opening .intro-envelope__flap{
+  transform: rotateX(180deg);
+}
+
+
+/* Card rises from envelope */
+
+.intro-envelope.is-opening .intro-envelope__card{
+  z-index: 7;
+
+  transform:
+    translateY(-115px)
+    scale(1);
+
+  box-shadow:
+    0 25px 45px rgba(46,42,34,0.18);
+
+  transition-delay: 0.35s;
+}
+
+
+/* Envelope fades after card reveal */
+
+.intro-envelope.is-opening.is-complete{
+  transition:
+    opacity 0.9s ease 0.05s,
+    visibility 0.9s ease 0.05s;
+}
+
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 520px){
+
+  .intro-envelope__scene{
+    width: min(86vw, 360px);
+    height: min(62vw, 245px);
+  }
+
+  .intro-envelope__seal{
+    width: 68px;
+    height: 68px;
+    font-size: 0.88rem;
+  }
+
+  .intro-envelope__instruction{
+    margin-top: 1.6rem;
+    font-size: 0.62rem;
+  }
+
+  .intro-envelope.is-opening .intro-envelope__card{
+    transform:
+      translateY(-100px)
+      scale(1);
+  }
+}
+
+
+/* ==========================================================================
+   Very small phones
+   ========================================================================== */
+
+@media (max-width: 380px){
+
+  .intro-envelope__scene{
+    width: 88vw;
+    height: 225px;
+  }
+
+  .intro-envelope__seal{
+    width: 64px;
+    height: 64px;
+  }
+
+  .intro-envelope__card strong{
+    font-size: 2rem;
+  }
+}
+
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+  .intro-envelope,
+  .intro-envelope__card,
+  .intro-envelope__flap,
+  .intro-envelope__seal,
+  .intro-envelope__instruction{
+    transition: none !important;
+    animation: none !important;
+  }
+}
