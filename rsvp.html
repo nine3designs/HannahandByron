@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSVP — Hannah &amp; Byron</title>
+<meta name="description" content="RSVP for Hannah and Byron's wedding on 28th May 2027.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-gated>
+
+<div class="paper-grain"></div>
+
+<header class="site-header">
+  <a href="home.html" class="monogram">H &amp; B</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav">
+    <a href="home.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="travel.html">Travel</a>
+    <a href="rsvp.html" class="is-active">RSVP</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow">RSVP</p>
+    <h1>Let us know you're coming</h1>
+    <p class="lede">Please reply by 1st March 2027 so we can finalise numbers with the venue. One form per guest, please.</p>
+  </section>
+
+  <section class="section section--narrow">
+    <form data-demo-form novalidate>
+      <div class="form-grid">
+
+        <div class="field full">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="field full">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field full">
+          <label>Will you be attending?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="attending" value="yes" checked> Joyfully accepts</label>
+            <label><input type="radio" name="attending" value="no"> Regretfully declines</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="guests">Number in your party</label>
+          <select id="guests" name="guests">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="meal">Meal choice</label>
+          <select id="meal" name="meal">
+            <option>Herb-roasted chicken</option>
+            <option>Wild mushroom wellington (v)</option>
+            <option>Pan-seared salmon</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="dietary">Dietary requirements or allergies</label>
+          <input type="text" id="dietary" name="dietary" placeholder="Let us know if there's anything we should plan for">
+        </div>
+
+        <div class="field full">
+          <label for="song">Song that will get you on the dance floor</label>
+          <input type="text" id="song" name="song">
+        </div>
+
+        <div class="field full">
+          <label for="message">Message for the happy couple</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn--filled" style="margin-top:1.8rem;">Send RSVP</button>
+      <p class="form-note">This form is a working preview — connect it to a service like Formspree or Netlify Forms before the site goes live. See the README for how.</p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="monogram">H &amp; B</div>
+  <p>28 . 05 . 27 &middot; The Glass House, Staining &middot; &copy; <span data-year></span></p>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/lock.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
