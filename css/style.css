@@ -168,7 +168,7 @@ Slightly closer together (adjust horizontal values as needed)
         left: auto;
         right: auto;
         bottom: 0;        /* anchor to bottom of screen */
-        width: 140px;      /* adjust size on mobile */
+          width: 160p;      /* adjust size on mobile */
         max-width: none;
         pointer-events: none;
         z-index: 1;
