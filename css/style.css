@@ -163,11 +163,11 @@ a{ color: inherit; text-decoration: none; }
   pointer-events: none;
   opacity: 0.9;
 }
-.sprig--left{ top: 6%; left: 2%; }
-.sprig--right{ top: 6%; right: 2%; transform: scaleX(-1); }
+.sprig--left{ top: 8%; left: 2%; }
+.sprig--right{ top: 8%; right: 2%; transform: scaleX(-1); }
 
 @media (max-width: 520px){
-.spray-img{ width: clamp(120px, 40%, 150px); max-height: 34vh; }
+.spray-img{ width: clamp(120px, 40%, 150px); max-height: 55vh; }
   .spray-img--left{ left: -6%; }
   .spray-img--right{ right: -6%; }
 }
