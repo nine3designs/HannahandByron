@@ -167,7 +167,7 @@ Slightly closer together (adjust horizontal values as needed)
         position: fixed;
         left: auto;
         right: auto;
-        bottom: -8;        /* anchor to bottom of screen */
+        bottom: -48px;        /* anchor to bottom of screen */
           width: 160p;      /* adjust size on mobile */
         max-width: none;
         pointer-events: none;
