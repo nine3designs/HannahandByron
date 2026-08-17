@@ -3051,7 +3051,7 @@ select:focus-visible {
 @media (max-width: 780px) {
 
   .spray-img {
-    width: 170px !important;
+    width: 180px !important;
 
     bottom: -35px !important;
   }
