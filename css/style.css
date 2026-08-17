@@ -3048,24 +3048,24 @@ select:focus-visible {
    SMALL PHONES
    ========================================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 780px) {
 
   .spray-img {
-    width: 150px !important;
+    width: 170px !important;
 
-    bottom: -8px !important;
+    bottom: -35px !important;
   }
 
   .spray-img--left {
-    left: -34px !important;
+    left: -38px !important;
 
-    bottom: -8px !important;
+    bottom: -35px !important;
   }
 
   .spray-img--right {
-    right: -34px !important;
+    right: -38px !important;
 
-    bottom: -8px !important;
+    bottom: -35px !important;
   }
 
   .landing .names {
@@ -3109,16 +3109,35 @@ select:focus-visible {
    VERY SMALL PHONES
    ========================================================================== */
 
-@media (max-width: 380px) {
+}
 
-  .site-header {
-    height: 60px;
-    min-height: 60px;
+@media (max-width: 480px) {
 
-    padding:
-      0
-      0.9rem;
+  .spray-img {
+
+    width: 165px !important;
+
+    bottom: -35px !important;
+
   }
+
+  .spray-img--left {
+
+    left: -36px !important;
+
+    bottom: -35px !important;
+
+  }
+
+  .spray-img--right {
+
+    right: -36px !important;
+
+    bottom: -35px !important;
+
+  }
+
+}
 
   .site-nav {
     top: 60px;
@@ -3176,21 +3195,6 @@ select:focus-visible {
     height: 58px;
   }
 
-  /* Floral sprays on very small phones */
-
-  .spray-img {
-    width: 145px !important;
-
-    bottom: -8px !important;
-  }
-
-  .spray-img--left {
-    left: -34px !important;
-  }
-
-  .spray-img--right {
-    right: -34px !important;
-  }
 
   .intro-envelope__scene {
     width: 90vw;
