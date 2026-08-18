@@ -3573,3 +3573,65 @@ and (orientation: landscape) {
   }
 
 }
+/* =========================================================
+   DESKTOP FLORAL SPRAYS
+   Fixed to the bottom corners of the screen
+   ========================================================= */
+
+@media screen and (min-width: 781px) {
+
+  .spray-img {
+    position: fixed !important;
+
+    top: auto !important;
+    bottom: -5px !important;
+
+    width: 270px !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 3 !important;
+
+    transform: none !important;
+  }
+
+
+  /* LEFT FLOWER */
+
+  .spray-img--left {
+    position: fixed !important;
+
+    left: -35px !important;
+    right: auto !important;
+
+    top: auto !important;
+    bottom: -5px !important;
+
+    transform:
+      rotate(-3deg) !important;
+  }
+
+
+  /* RIGHT FLOWER */
+
+  .spray-img--right {
+    position: fixed !important;
+
+    right: -35px !important;
+    left: auto !important;
+
+    top: auto !important;
+    bottom: -5px !important;
+
+    transform:
+      rotate(3deg) !important;
+  }
+
+}
