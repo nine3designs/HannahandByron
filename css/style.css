@@ -254,8 +254,8 @@ a {
   position: fixed;
 
   top: auto;
-bottom: -100;
-  width: 220px;
+bottom: -100px;
+  width: 320px;
   height: auto;
 
   max-width: none;
