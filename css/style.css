@@ -3608,11 +3608,11 @@ and (orientation: landscape) {
   .spray-img--left {
     position: fixed !important;
 
-    left: -25px !important;
+    left: -15px !important;
     right: auto !important;
 
     top: auto !important;
-    bottom: -5px !important;
+    bottom: -3px !important;
 
     transform:
       rotate(-3deg) !important;
@@ -3624,11 +3624,11 @@ and (orientation: landscape) {
   .spray-img--right {
     position: fixed !important;
 
-    right: -25px !important;
+    right: -15px !important;
     left: auto !important;
 
     top: auto !important;
-    bottom: -5px !important;
+    bottom: -3px !important;
 
     transform:
       rotate(3deg) !important;
