@@ -283,166 +283,194 @@ a {
 
   transform:
     translateY(-50%);
-}
+}/* =========================================================
+   DESKTOP HEADER — FINAL FIX
+   ========================================================= */
 
-/* ==========================================================================
-   SITE HEADER
-   ========================================================================== */
+@media screen and (min-width: 781px) {
 
-.site-header {
-  position: fixed;
+  .site-header {
+    position: fixed !important;
 
-  top: 0;
-  left: 0;
-  right: 0;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
 
-  width: 100%;
-  min-height: 24px;
+    width: 100% !important;
+    height: 54px !important;
+    min-height: 54px !important;
 
-  z-index: 1000;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    padding: 0 3rem !important;
+    margin: 0 !important;
 
-  padding:
-    0
-    clamp(1.25rem, 5vw, 3.5rem);
+    transform: none !important;
 
-  background:
-    rgba(246, 240, 230, 0.88);
+    z-index: 10000 !important;
 
-  border-bottom:
-    1px solid var(--line-soft);
+    background: rgba(246, 240, 230, 0.92) !important;
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+    border-bottom: 1px solid var(--line-soft);
 
-.site-header .monogram {
-  margin: 0;
-
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-
-  letter-spacing: 0.22em;
-}
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
 
-/* ==========================================================================
-   DESKTOP NAV
-   ========================================================================== */
-/* ==========================================================================
-   DESKTOP NAV
-   ========================================================================== */
+  /* ---------------------------------------------------------
+     H & B LOGO
+     --------------------------------------------------------- */
 
-.site-nav {
-  display: flex;
-  align-items: center;
+  .site-header .monogram {
+    display: flex;
+    align-items: center;
 
-  gap: clamp(1.5rem, 2vw, 2.2rem);
+    height: 54px;
 
-  font-family: var(--font-label);
-  font-size: 0.78rem;
+    margin: 0 !important;
+    padding: 0 !important;
 
-  letter-spacing: var(--tracking-mid);
-  text-transform: uppercase;
-}
+    font-family: var(--font-display);
+    font-size: 1.2rem;
 
-.site-nav a {
-  position: relative;
+    line-height: 1;
 
-  display: flex;
-  align-items: center;
+    letter-spacing: 0.2em;
 
-  padding: 6px 0;
+    white-space: nowrap;
+  }
 
-  color: var(--ink-soft);
 
-  transition:
-    color 0.25s ease;
-}
+  /* ---------------------------------------------------------
+     NAV
+     --------------------------------------------------------- */
 
-.site-nav a::after {
-  content: "";
+  .site-nav {
+    position: static !important;
 
-  position: absolute;
+    display: flex !important;
+    align-items: center !important;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+    justify-content: flex-end !important;
 
-  height: 1px;
+    height: 54px;
 
-  background: var(--gold);
+    gap: 1.8rem;
 
-  transform: scaleX(0);
-  transform-origin: left;
+    margin: 0 !important;
+    padding: 0 !important;
 
-  transition:
-    transform 0.3s ease;
-}
+    font-family: var(--font-label);
 
-.site-nav a:hover,
-.site-nav a.is-active {
-  color: var(--ink);
-}
+    font-size: 0.72rem;
 
-.site-nav a:hover::after,
-.site-nav a.is-active::after {
-  transform: scaleX(1);
-}
+    line-height: 1;
 
-/* ==========================================================================
-   HAMBURGER
-   ========================================================================== */
+    letter-spacing: 0.18em;
 
-.nav-toggle {
-  display: none;
+    text-transform: uppercase;
+  }
 
-  position: relative;
 
-  width: 42px;
-  height: 42px;
+  /* ---------------------------------------------------------
+     NAV LINKS
+     --------------------------------------------------------- */
 
-  padding: 0;
-  margin: 0;
+  .site-nav a {
+    position: relative;
 
-  border: 0;
-  background: transparent;
+    display: flex;
+    align-items: center;
 
-  cursor: pointer;
-}
+    height: 54px;
 
-.nav-toggle span {
-  position: absolute;
+    margin: 0;
+    padding: 0 !important;
 
-  left: 8px;
-  right: 8px;
+    color: var(--ink-soft);
 
-  height: 1px;
+    line-height: 1;
 
-  background: var(--ink);
+    white-space: nowrap;
 
-  transition:
-    top 0.3s ease,
-    transform 0.3s ease,
-    opacity 0.25s ease;
-}
+    transition: color 0.25s ease;
+  }
 
-.nav-toggle span:nth-child(1) {
-  top: 13px;
-}
 
-.nav-toggle span:nth-child(2) {
-  top: 20px;
-}
+  /* ---------------------------------------------------------
+     GOLD ACTIVE / HOVER LINE
+     --------------------------------------------------------- */
 
-.nav-toggle span:nth-child(3) {
-  top: 27px;
+  .site-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 10px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a.is-active {
+    color: var(--ink);
+  }
+
+  .site-nav a:hover::after,
+  .site-nav a.is-active::after {
+    transform: scaleX(1);
+  }
+
 }
 
 
+/* =========================================================
+   MOBILE HEADER — KEEP SEPARATE
+   ========================================================= */
+
+@media screen and (max-width: 780px) {
+
+  .site-header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    height: 64px !important;
+    min-height: 64px !important;
+
+    padding: 0 1rem !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    transform: none !important;
+
+    z-index: 10000 !important;
+  }
+
+}
 /* ==========================================================================
    FOOTER
    ========================================================================== */
