@@ -250,26 +250,32 @@ a {
    BOTANICAL SPRAYS — DESKTOP
    ========================================================================== */
 
-.spray-img {
-  position: fixed;
+ position: fixed !important;
 
-  top: auto;
-bottom: -100px;
-  width: 320px;
-  height: auto;
+    top: auto !important;
+    bottom: -35px !important;
 
-  max-width: none;
-  max-height: none;
+    width: 175px !important;
+    height: auto !important;
 
-  pointer-events: none;
+    max-width: none !important;
+    max-height: none !important;
 
-  z-index: 1;
+    margin: 0 !important;
+    padding: 0 !important;
 
-  filter:
-    drop-shadow(
-      0 10px 16px rgba(46, 42, 34, 0.12)
-    );
-}
+    pointer-events: none !important;
+
+    z-index: 3 !important;
+
+    transform: none !important;
+
+    filter:
+      drop-shadow(
+        0 10px 16px
+        rgba(46,42,34,0.12)
+      );
+
 
 .spray-img--left {
   left: -50%;
