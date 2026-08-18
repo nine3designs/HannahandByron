@@ -3384,3 +3384,192 @@ and (orientation: landscape) {
   }
 
 }
+
+/* =========================================================
+   DESKTOP HEADER — FINAL FIX
+   ========================================================= */
+
+@media screen and (min-width: 781px) {
+
+  .site-header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    height: 54px !important;
+    min-height: 54px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    padding: 0 3rem !important;
+    margin: 0 !important;
+
+    transform: none !important;
+
+    z-index: 10000 !important;
+
+    background: rgba(246, 240, 230, 0.92) !important;
+
+    border-bottom: 1px solid var(--line-soft);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+
+  /* ---------------------------------------------------------
+     H & B LOGO
+     --------------------------------------------------------- */
+
+  .site-header .monogram {
+    display: flex;
+    align-items: center;
+
+    height: 54px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+
+    line-height: 1;
+
+    letter-spacing: 0.2em;
+
+    white-space: nowrap;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV
+     --------------------------------------------------------- */
+
+  .site-nav {
+    position: static !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    justify-content: flex-end !important;
+
+    height: 54px;
+
+    gap: 1.8rem;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: var(--font-label);
+
+    font-size: 0.72rem;
+
+    line-height: 1;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+  }
+
+
+  /* ---------------------------------------------------------
+     NAV LINKS
+     --------------------------------------------------------- */
+
+  .site-nav a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 54px;
+
+    margin: 0;
+    padding: 0 !important;
+
+    color: var(--ink-soft);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+  }
+
+
+  /* ---------------------------------------------------------
+     GOLD ACTIVE / HOVER LINE
+     --------------------------------------------------------- */
+
+  .site-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 10px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a.is-active {
+    color: var(--ink);
+  }
+
+  .site-nav a:hover::after,
+  .site-nav a.is-active::after {
+    transform: scaleX(1);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER — KEEP SEPARATE
+   ========================================================= */
+
+@media screen and (max-width: 780px) {
+
+  .site-header {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    height: 64px !important;
+    min-height: 64px !important;
+
+    padding: 0 1rem !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    transform: none !important;
+
+    z-index: 10000 !important;
+  }
+
+}
