@@ -3586,7 +3586,7 @@ and (orientation: landscape) {
     top: auto !important;
     bottom: -5px !important;
 
-    width: 320px !important;
+    width: 310px !important;
     height: auto !important;
 
     max-width: none !important;
@@ -3608,7 +3608,7 @@ and (orientation: landscape) {
   .spray-img--left {
     position: fixed !important;
 
-    left: -35px !important;
+    left: -25px !important;
     right: auto !important;
 
     top: auto !important;
@@ -3624,7 +3624,7 @@ and (orientation: landscape) {
   .spray-img--right {
     position: fixed !important;
 
-    right: -35px !important;
+    right: -25px !important;
     left: auto !important;
 
     top: auto !important;
