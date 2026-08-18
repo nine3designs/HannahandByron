@@ -250,32 +250,26 @@ a {
    BOTANICAL SPRAYS — DESKTOP
    ========================================================================== */
 
- position: fixed !important;
+ .spray-img {
+  position: absolute;
 
-    top: auto !important;
-    bottom: -35px !important;
+  top: 100%;
 
-    width: 175px !important;
-    height: auto !important;
+  width: 220px;
+  height: auto;
 
-    max-width: none !important;
-    max-height: none !important;
+  max-width: none;
+  max-height: none;
 
-    margin: 0 !important;
-    padding: 0 !important;
+  pointer-events: none;
 
-    pointer-events: none !important;
+  z-index: 1;
 
-    z-index: 3 !important;
-
-    transform: none !important;
-
-    filter:
-      drop-shadow(
-        0 10px 16px
-        rgba(46,42,34,0.12)
-      );
-
+  filter:
+    drop-shadow(
+      0 10px 16px rgba(46, 42, 34, 0.12)
+    );
+}
 
 .spray-img--left {
   left: -50%;
@@ -290,7 +284,6 @@ a {
   transform:
     translateY(-50%);
 }
-
 
 /* ==========================================================================
    SITE HEADER
