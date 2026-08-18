@@ -1,6 +1,6 @@
 # Hannah &amp; Byron — Wedding Website
 
-A from-scratch, no-build-tools wedding website: a "Save the Date" landing page with a
+Wedding website: a "Save the Date" landing page with a
 password-gated entrance into the full site (Home, Our Story, Timeline, Travel, RSVP, FAQ,
 Contact). Built with plain HTML/CSS/JS so it works with just VS Code and GitHub Pages —
 no frameworks, no npm install.
@@ -22,7 +22,7 @@ wedding-site/
 ├── css/
 │   └── style.css        ← all styling lives here
 ├── js/
-│   ├── config.js         ← ⭐ edit this first — names, date, venue, password
+│   ├── config.js         ← ⭐
 │   ├── lock.js            ← envelope open/close + password check + page gate
 │   ├── countdown.js       ← live countdown timer
 │   └── main.js            ← mobile nav, FAQ accordion, footer year, demo forms
@@ -31,8 +31,6 @@ wedding-site/
                               pages use the artwork inlined directly in the HTML for
                               maximum browser compatibility — see note below)
 ```
-
-## 2. Before you do anything else: edit `js/config.js`
 
 This is the one file that drives the couple's names, wedding date/time, venue, and the
 guest password. Everything else (the countdown, the lock screen) reads from it.
@@ -48,33 +46,8 @@ const WEDDING_CONFIG = {
 };
 ```
 
-## 3. How the envelope / password gate works
 
-- `index.html` is always public — it's the "Save the Date" teaser, safe for search
-  engines and safe to share before you're ready to reveal the full site.
-- Clicking the wax seal opens the envelope. Enter the password from `config.js` and
-  you're taken to `home.html`.
-- Every other page (`home.html`, `our-story.html`, etc.) has `data-gated` on its
-  `<body>` tag. `js/lock.js` checks on page load whether this browser has already
-  unlocked the site (stored in `sessionStorage`, so it resets each new browser
-  session); if not, it bounces the visitor back to `index.html`.
-
-**Important security note:** this is a *soft* lock, not real security. The password
-lives in plain text in `js/config.js`, which anyone can view via "View Source." It's
-good enough to stop the full site turning up in Google before launch, or a link being
-idly guessed — not good enough to protect anything sensitive. When you're ready to go
-fully live, either:
-- **Remove the gate entirely** — delete the `data-gated` attribute from every page's
-  `<body>` tag (or delete the whole "gate for full site" block at the bottom of
-  `js/lock.js`), or
-- **Use real protection** if you want to keep it private for longer — most static
-  hosts (Netlify, Cloudflare Pages) offer password protection or "basic auth" as a
-  built-in feature, which is properly secure. GitHub Pages itself doesn't support
-  this natively, so if real protection matters, that's a reason to host elsewhere
-  until launch day, then move to GitHub Pages (or keep it there — see hosting notes
-  below).
-
-## 4. Editing content
+## Editing content
 
 Everything is plain HTML, so text edits are just... editing the text. A few notes:
 
@@ -122,19 +95,6 @@ in VS Code, right-click `index.html`, and choose "Open with Live Server."
 5. GitHub will give you a URL like `https://yourusername.github.io/your-repo-name/` —
    that's your live site within a minute or two.
 
-## 8. Adding your custom domain later
-
-Once you've bought your domain:
-
-1. In your repo: **Settings → Pages → Custom domain**, enter your domain, save. This
-   creates a `CNAME` file in your repo automatically.
-2. At your domain registrar, add the DNS records GitHub's docs specify (either an
-   `ALIAS`/`ANAME`/`A` record setup for an apex domain like `hannahandbyron.com`, or a
-   `CNAME` record for a subdomain like `wedding.hannahandbyron.com`) — GitHub's Pages
-   settings page shows you exactly which records it's expecting once you save the
-   domain.
-3. Tick "Enforce HTTPS" once it becomes available (can take a little while after DNS
-   propagates).
 
 ## 9. Photos
 
@@ -145,4 +105,4 @@ style so it fills the frame nicely.
 
 ---
 
-Made for Hannah &amp; Byron, 28.05.27 💛
+Made for Hannah &amp; Byron, 28.05.27 💛 Nine3 Weddings
