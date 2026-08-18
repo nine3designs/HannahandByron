@@ -251,10 +251,10 @@ a {
    ========================================================================== */
 
 .spray-img {
-  position: absolute;
+  position: fixed;
 
-  top: 100%;
-
+  top: auto;
+bottom: -100;
   width: 220px;
   height: auto;
 
