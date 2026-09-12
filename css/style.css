@@ -3166,7 +3166,7 @@ select:focus-visible {
    VERY SMALL PHONES
    ========================================================================== */
 
-}
+
 
 @media (max-width: 480px) {
 
@@ -3266,7 +3266,6 @@ select:focus-visible {
   .intro-envelope__card strong {
     font-size: 1.9rem;
   }
-}
 
 
 /* ==========================================================================
