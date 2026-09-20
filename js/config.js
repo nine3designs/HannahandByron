@@ -23,5 +23,5 @@ const WEDDING_CONFIG = {
   weddingDateISO: "2027-05-28T13:00:00",
   venueName: "The Glass House",
   venueLocation: "Staining",
-  guestPassword: "hannahandbyron",
+  guestPassword: "harriswedding",
 };
