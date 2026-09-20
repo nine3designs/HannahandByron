@@ -3634,3 +3634,40 @@ and (orientation: landscape) {
   }
 
 }
+.story-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border-radius: 8px;
+}
+.promo-code{
+    display:inline-block;
+    padding:0.7rem 1rem;
+    margin-top:0.5rem;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.5);
+    font-size:.78rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    font-weight:600;
+}
+.travel-note{
+    max-width:700px;
+    margin:0 auto;
+    padding:2.5rem;
+    text-align:center;
+    background:#f8f6f2;
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:4px;
+}
+
+.travel-note h3{
+    margin:0.5rem 0 1rem;
+    font-family:var(--font-display);
+    font-weight:400;
+}
+
+.travel-note p:last-child{
+    margin-bottom:0;
+}
