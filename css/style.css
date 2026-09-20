@@ -3671,3 +3671,67 @@ and (orientation: landscape) {
 .travel-note p:last-child{
     margin-bottom:0;
 }
+/* 3. The Perfect Square Image Hack */
+ .image-wrapper {
+   width: 50%;
+   aspect-ratio: 1 / 1; /* Strictly forces the image area to be a perfect square */
+   position: relative;
+   overflow: hidden;
+ }
+<style>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Lowered from 280px to make the individual square cards smaller */
+  gap: 20px;
+  max-width: 800px; /* Lowered from 1200px to keep the whole section compact */
+  margin: 0 auto;
+}
+
+
+  /* Soft hover effect to make it interactive */
+  .grid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  /* 3. The Perfect Square Image Hack */
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Strictly forces the image area to be a perfect square */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-wrapper img {
+    width: 60%;
+    height:60%;
+    object-fit: cover; /* Crops the venue image nicely into the square without distorting it */
+    object-position: center;
+  }
+
+  /* 4. Text Content Below Image */
+  .card-content {
+    padding: 20px;
+    font-family: sans-serif;
+  }
+
+  .card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #333333;
+  }
+
+  .card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+  }
+</style>
+.grid-card {
+  max-width: 250px; /* Forces the card to never exceed this size, keeping the square small */
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
