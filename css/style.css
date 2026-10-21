@@ -94,6 +94,305 @@
     0 30px 60px -20px rgba(46, 42, 34, 0.28);
 }
 
+/* Photo-led story gallery, styled to echo the Save the Date page. */
+.story-gallery {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Carry the Save the Date flowers onto the main site pages. */
+body[data-gated] main {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-gated] main::before,
+body[data-gated] main::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 7rem;
+  bottom: 0;
+  width: clamp(110px, 16vw, 220px);
+  background: url("../images/floral1.png") center bottom / contain no-repeat;
+  opacity: 0.68;
+  pointer-events: none;
+}
+
+body[data-gated] main::before {
+  left: -2rem;
+}
+
+body[data-gated] main::after {
+  right: -2rem;
+  transform: scaleX(-1);
+}
+
+body[data-gated] .site-header {
+  z-index: 10001;
+}
+
+/* Make the landing page's small menu icon read clearly as a menu. */
+.site-header .nav-toggle {
+  position: relative;
+  width: 48px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(46, 42, 34, 0.32);
+  border-radius: 5px;
+  background: rgba(251, 247, 239, 0.92);
+  box-shadow: 0 2px 8px rgba(46, 42, 34, 0.12);
+  cursor: pointer;
+}
+
+.site-header .nav-toggle span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header .nav-toggle span:nth-child(1) { top: 13px; }
+.site-header .nav-toggle span:nth-child(2) { top: 20px; }
+.site-header .nav-toggle span:nth-child(3) { top: 27px; }
+
+@media (min-width: 781px) {
+  .site-header .nav-toggle { display: none; }
+}
+
+@media (max-width: 780px) {
+  body[data-gated] main::before,
+  body[data-gated] main::after {
+    top: auto;
+    bottom: 0;
+    width: 130px;
+    height: 280px;
+    opacity: 0.52;
+    background-position: bottom;
+  }
+
+  body[data-gated] main::before { left: -2.5rem; }
+  body[data-gated] main::after { right: -2.5rem; }
+}
+
+.polaroid-frame {
+  min-height: 340px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+.polaroid {
+  width: min(72%, 265px);
+  margin: 0;
+  padding: 12px 12px 48px;
+  background: #fffdf8;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 12px 28px rgba(46, 42, 34, 0.2);
+  color: var(--ink-soft);
+  transform: rotate(-4deg);
+}
+
+.polaroid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.04);
+}
+
+.polaroid--intro img { height: 250px; }
+
+.polaroid figcaption {
+  padding-top: 6px;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.polaroid--intro img {
+  object-position: center 36%;
+}
+
+.polaroid-pair {
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.polaroid--family {
+  position: relative;
+  z-index: 1;
+  width: min(62%, 230px);
+  transform: rotate(-7deg) translateX(12px);
+}
+
+.polaroid--family img {
+  height: 240px;
+  object-position: center 58%;
+}
+
+.polaroid--dog {
+  width: min(56%, 205px);
+  transform: rotate(7deg) translate(-8px, 45px);
+}
+
+.polaroid--dog img {
+  height: 220px;
+}
+
+.polaroid-cluster {
+  position: relative;
+  display: block;
+  min-height: 510px;
+  isolation: isolate;
+}
+
+.polaroid--proposal {
+  position: absolute;
+  width: min(49%, 210px);
+  transform-origin: center center;
+}
+
+.polaroid--proposal img {
+  height: 170px;
+}
+
+.polaroid--one {
+  top: 30px;
+  left: 6%;
+  transform: rotate(-8deg);
+}
+
+.polaroid--two {
+  top: 82px;
+  left: 41%;
+  transform: rotate(5deg);
+}
+
+.polaroid--three {
+  top: 205px;
+  left: 25%;
+  transform: rotate(-2deg);
+}
+
+.polaroid--one img {
+  object-position: center 66%;
+}
+
+@media (max-width: 780px) {
+  .polaroid-frame {
+    min-height: 310px;
+  }
+
+  .polaroid {
+    width: min(72%, 250px);
+  }
+
+  .polaroid img {
+    height: 220px;
+  }
+
+  .polaroid--family {
+    width: min(60%, 205px);
+  }
+
+  .polaroid--family img {
+    height: 205px;
+  }
+
+  .polaroid--dog {
+    width: min(55%, 180px);
+  }
+
+  .polaroid--dog img {
+    height: 190px;
+  }
+
+  .polaroid-cluster {
+    min-height: 450px;
+  }
+
+  .polaroid--proposal {
+    width: min(50%, 185px);
+  }
+
+  .polaroid--proposal img {
+    height: 145px;
+  }
+
+  .polaroid-cluster .polaroid--proposal:hover,
+  .polaroid-cluster .polaroid--proposal:focus-within {
+    left: 7%;
+    width: 86%;
+  }
+}
+
+/* Bring a proposal snapshot forward when a guest points to it. */
+.polaroid-cluster .polaroid--proposal {
+  z-index: 1;
+  transition: left 0.45s cubic-bezier(.2,.7,.2,1), top 0.45s cubic-bezier(.2,.7,.2,1), width 0.45s ease, transform 0.45s cubic-bezier(.2,.7,.2,1), box-shadow 0.45s ease;
+  cursor: pointer;
+}
+
+.polaroid-cluster .polaroid--proposal:hover,
+.polaroid-cluster .polaroid--proposal:focus-within {
+  z-index: 5;
+  top: 16px;
+  left: 12%;
+  width: 76%;
+  transform: rotate(0deg);
+  box-shadow: 0 22px 42px rgba(46, 42, 34, 0.34);
+}
+
+@media (hover: none) {
+  .polaroid-cluster .polaroid--proposal { cursor: default; }
+}
+
+/* Venue image banner on the FAQ, with a soft fade into the page paper. */
+.faq-banner {
+  position: relative;
+  height: clamp(190px, 30vw, 380px);
+  overflow: hidden;
+  margin-top: 54px;
+}
+
+.faq-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(246,240,230,0) 45%, var(--cream) 100%);
+  pointer-events: none;
+}
+
+.faq-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.faq-page-hero {
+  padding-top: 0;
+}
+
+.contact-card {
+  width: min(100%, 680px);
+  max-width: 680px;
+  margin: 0 auto;
+  grid-column: 1 / -1;
+}
+
+.contact-card a {
+  border-bottom: 1px solid var(--gold);
+}
+
 
 /* ==========================================================================
    RESET
@@ -820,6 +1119,14 @@ a {
   order: 2;
 }
 
+.story-art.polaroid-frame {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
 .story-art {
   position: relative;
 
@@ -842,6 +1149,12 @@ a {
       var(--paper-edge),
       var(--cream-soft)
     );
+}
+
+.story-art.polaroid-frame {
+  aspect-ratio: auto;
+  min-height: 390px;
+  overflow: visible;
 }
 
 .story-copy .eyebrow {
@@ -2493,6 +2806,12 @@ select:focus-visible {
     width: 100%;
 
     aspect-ratio: 4 / 5;
+  }
+
+  .story-art.polaroid-frame {
+    aspect-ratio: auto;
+    min-height: 360px;
+    overflow: visible;
   }
 
   .story-copy h2 {
