@@ -9,7 +9,7 @@
 <meta name="description" content="RSVP for Hannah and Byron's wedding on 28th May 2027.">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-gated>
+<body data-gated class="rsvp-page">
 
 <div class="paper-grain"></div>
 
@@ -34,7 +34,10 @@
   <section class="page-hero">
     <p class="eyebrow">RSVP</p>
     <h1>Let us know you're coming</h1>
-    <p class="lede">We’d love to know if you’ll be joining us for our special day.<p class="eyebrow"> <BR>♡<BR> <p>Please reply by 28th February 2027 so we can finalise numbers with the venue. <BR> <p class="eyebrow">One form per guest, please.</p>
+    <p class="lede">We’d love to know if you’ll be joining us for our special day.</p>
+    <p class="eyebrow rsvp-divider">♡</p>
+    <p>Please reply by 28th February 2027 so we can finalise numbers with the venue.</p>
+    <p class="eyebrow">One form per guest, please.</p>
     
   </section>
 
@@ -55,13 +58,13 @@
           <input type="email" id="email" name="email" required>
         </div>
 
-        <div class="field full">
-          <label>Will you be attending?</label>
+        <fieldset class="field full attendance-field">
+          <legend>Will you be attending?</legend>
           <div class="radio-group">
-            <label><input type="radio" name="attending" value="yes" checked> Joyfully accepts</label>
-            <label><input type="radio" name="attending" value="no"> Regretfully declines</label>
+            <label class="attendance-option"><input type="radio" name="attending" value="yes" checked> <span>Joyfully accepts</span></label>
+            <label class="attendance-option"><input type="radio" name="attending" value="no"> <span>Regretfully declines</span></label>
           </div>
-        </div>
+        </fieldset>
 
         <div class="field">
           <label for="guests">Number in your party</label>
@@ -103,6 +106,10 @@
       
     </form>
   </section>
+
+  <div class="home-story-cta-wrap">
+    <a class="home-story-cta" href="faq.html">FAQ <span aria-hidden="true">&gt;</span></a>
+  </div>
 
 </main>
 

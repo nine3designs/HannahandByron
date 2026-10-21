@@ -113,7 +113,7 @@ body[data-gated] main::after {
   z-index: -1;
   top: 7rem;
   bottom: 0;
-  width: clamp(110px, 16vw, 220px);
+  width: clamp(150px, 20vw, 280px);
   background: url("../images/floral1.png") center bottom / contain no-repeat;
   opacity: 0.68;
   pointer-events: none;
@@ -168,9 +168,9 @@ body[data-gated] .site-header {
   body[data-gated] main::after {
     top: auto;
     bottom: 0;
-    width: 130px;
-    height: 280px;
-    opacity: 0.52;
+    width: 180px;
+    height: 340px;
+    opacity: 0.62;
     background-position: bottom;
   }
 
@@ -355,31 +355,38 @@ body[data-gated] .site-header {
   .polaroid-cluster .polaroid--proposal { cursor: default; }
 }
 
-/* Venue image banner on the FAQ, with a soft fade into the page paper. */
-.faq-banner {
-  position: relative;
-  height: clamp(190px, 30vw, 380px);
-  overflow: hidden;
-  margin-top: 54px;
+/* Venue photograph styled as a large Polaroid below the Travel heading. */
+.travel-venue-image {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 0;
+  margin: 0 auto 2rem;
 }
 
-.faq-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(246,240,230,0) 45%, var(--cream) 100%);
-  pointer-events: none;
+.travel-venue-polaroid {
+  width: min(100%, 1120px);
+  margin: 0;
+  padding: clamp(12px, 2vw, 22px) clamp(12px, 2vw, 22px) 1.15rem;
+  background: #fffdf8;
+  box-shadow: 0 18px 42px rgba(46, 42, 34, 0.18);
+  transform: rotate(-1deg);
 }
 
-.faq-banner img {
+.travel-venue-polaroid img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
   object-fit: cover;
-  object-position: center 50%;
+  object-position: center;
 }
 
-.faq-page-hero {
-  padding-top: 0;
+.travel-venue-polaroid figcaption {
+  padding-top: 0.65rem;
+  color: var(--ink-soft);
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  line-height: 1.1;
+  text-align: center;
 }
 
 .contact-card {
@@ -387,10 +394,183 @@ body[data-gated] .site-header {
   max-width: 680px;
   margin: 0 auto;
   grid-column: 1 / -1;
+  background: rgba(251, 247, 239, 0.18);
+  text-align: center;
+}
+
+.contact-card .icon { text-align: center; }
+
+.contact-or {
+  margin: 0 0 1rem;
+  color: var(--peach);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.24em;
+  text-align: center;
+}
+
+.home-story-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.home-story-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid rgba(169, 132, 63, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.42);
+  color: var(--gold);
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(46, 42, 34, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-story-cta span {
+  display: inline-block;
+  font-size: 1.15em;
+  transition: transform 0.25s ease;
+}
+
+.home-story-cta:hover,
+.home-story-cta:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(169, 132, 63, 0.52);
+  background: rgba(255, 253, 248, 0.78);
+  box-shadow: 0 12px 28px rgba(46, 42, 34, 0.12);
+  outline: none;
+}
+
+.home-story-cta:hover span,
+.home-story-cta:focus-visible span {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-story-cta,
+  .home-story-cta span { transition: none; }
 }
 
 .contact-card a {
   border-bottom: 1px solid var(--gold);
+}
+
+/* Travel page transport symbols and accommodation links. */
+.travel-icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: grayscale(1) sepia(1) saturate(3.2) hue-rotate(2deg) brightness(0.82);
+}
+
+.property-card h3 span {
+  color: var(--rose);
+  font-size: 0.88em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.property-card a.property-link {
+  color: var(--peach);
+  font-weight: 600;
+  border-bottom: 1px solid currentColor;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.property-card a.property-link:hover,
+.property-card a.property-link:focus-visible {
+  color: #bd7747;
+}
+
+/* More legible RSVP fields and clear, touch-friendly attendance choices. */
+.rsvp-page .field label,
+.rsvp-page .attendance-field legend {
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+}
+
+.rsvp-page .field input,
+.rsvp-page .field select,
+.rsvp-page .field textarea {
+  font-family: var(--font-seasons);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
+.rsvp-page .field input,
+.rsvp-page .field select {
+  min-height: 54px;
+}
+
+.attendance-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.attendance-field legend {
+  margin-bottom: 0.8rem;
+  color: var(--ink-faint);
+  font-family: var(--font-label);
+  text-transform: uppercase;
+}
+
+.rsvp-page .radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.rsvp-page .attendance-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 64px;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(251, 247, 239, 0.82);
+  color: var(--ink-soft);
+  font-family: var(--font-seasons);
+  font-size: 1.08rem;
+  line-height: 1.35;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.rsvp-page .attendance-option:has(input:checked) {
+  border-color: var(--peach);
+  background: rgba(240, 201, 160, 0.28);
+  box-shadow: 0 4px 14px rgba(46, 42, 34, 0.06);
+}
+
+.rsvp-page .attendance-option input {
+  width: 1.1rem;
+  height: 1.1rem;
+  min-height: 0;
+  margin: 0;
+  accent-color: var(--peach);
+  flex: 0 0 auto;
+}
+
+.rsvp-page .attendance-option span {
+  display: block;
+}
+
+.rsvp-page .rsvp-divider {
+  margin: 1rem 0;
+  letter-spacing: 0;
+  font-size: 1.3rem;
 }
 
 
@@ -996,7 +1176,7 @@ a {
 .timeline {
   position: relative;
 
-  max-width: 640px;
+  max-width: 760px;
 
   margin:
     2.5rem
@@ -1011,7 +1191,7 @@ a {
 
   top: 0;
   bottom: 0;
-  left: 84px;
+  left: 120px;
 
   width: 1px;
 
@@ -1024,23 +1204,41 @@ a {
   display: grid;
 
   grid-template-columns:
-    70px
-    28px
+    88px
+    32px
     1fr;
 
   gap:
     0
     1rem;
 
-  padding-bottom: 2.6rem;
+  padding: 0 0 1.25rem;
+  margin-bottom: 0.65rem;
+  border-radius: 14px;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .timeline-item:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.timeline-item:hover,
+.timeline-item:focus-visible {
+  z-index: 1;
+  transform: translateX(5px);
+  background: rgba(255, 253, 248, 0.78);
+  box-shadow: 0 12px 30px rgba(46, 42, 34, 0.08);
+  outline: none;
 }
 
 .timeline-item .time {
-  padding-top: 0.1rem;
+  align-self: start;
+  justify-self: end;
+  margin-top: 0.05rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(169, 132, 63, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.78);
 
   font-family: var(--font-display);
   font-size: 1.05rem;
@@ -1060,8 +1258,8 @@ a {
 .timeline-item .dot::before {
   content: "";
 
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
 
   margin-top: 0.35rem;
 
@@ -1071,6 +1269,15 @@ a {
   border-radius: 50%;
 
   background: var(--cream);
+  box-shadow: 0 0 0 4px var(--cream);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-item:hover .dot::before,
+.timeline-item:focus-visible .dot::before {
+  background: var(--peach);
+  box-shadow: 0 0 0 5px rgba(222, 158, 104, 0.18);
+  transform: scale(1.12);
 }
 
 .timeline-item h3 {
@@ -1091,6 +1298,13 @@ a {
 
   font-size: 0.95rem;
   line-height: 1.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item,
+  .timeline-item .dot::before {
+    transition: none;
+  }
 }
 
 
@@ -2919,6 +3133,16 @@ select:focus-visible {
     gap: 0.8rem;
   }
 
+  .rsvp-page .radio-group {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-page .field input,
+  .rsvp-page .field select,
+  .rsvp-page .field textarea {
+    font-size: 1rem;
+  }
+
 
   /* ------------------------------------------------------------------------
      TIMELINE
@@ -2934,7 +3158,7 @@ select:focus-visible {
   }
 
   .timeline::before {
-    left: 74px;
+    left: 85px;
   }
 
   .timeline-item {
