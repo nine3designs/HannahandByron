@@ -4282,7 +4282,7 @@ and (orientation: landscape) {
 @media (max-width: 780px) {
   .our-story-page .story-art.polaroid-frame.polaroid-cluster {
     min-height: 682px;
-    margin: 0 0 calc(3rem - 18px);
+    margin: 0 0 calc(3rem - 38px);
     padding: 1rem 1rem calc(6rem - 18px);
   }
 
