@@ -4277,6 +4277,11 @@ and (orientation: landscape) {
   opacity: 0.22 !important;
 }
 
+.rsvp-page main::before,
+.rsvp-page main::after {
+  opacity: 0.22 !important;
+}
+
 /* Keep the mobile proposal stack clear of its caption and story copy. */
 @media (max-width: 780px) {
   .our-story-page .page-hero {
