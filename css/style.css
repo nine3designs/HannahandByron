@@ -249,9 +249,9 @@ body[data-gated] .site-header {
 
 .polaroid-cluster {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: clamp(0.65rem, 1.5vw, 1.25rem);
+  gap: clamp(0.9rem, 2vw, 1.5rem);
   min-height: 0;
   padding: 1rem 0;
 }
@@ -259,6 +259,7 @@ body[data-gated] .site-header {
 .polaroid--proposal {
   position: relative;
   width: 100%;
+  max-width: 235px;
   min-width: 0;
   margin: 0;
   transform: none;
@@ -266,6 +267,15 @@ body[data-gated] .site-header {
   z-index: auto;
   cursor: default;
   transition: none;
+}
+
+.polaroid-cluster .polaroid--one { transform: rotate(-5deg); }
+.polaroid-cluster .polaroid--two { transform: rotate(5deg); }
+.polaroid-cluster .polaroid--three {
+  grid-column: 1 / -1;
+  width: min(48%, 235px);
+  justify-self: center;
+  transform: rotate(-1deg);
 }
 
 .polaroid--proposal img {
@@ -307,16 +317,20 @@ body[data-gated] .site-header {
   }
 
   .polaroid-cluster {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-items: center;
-    gap: 1.25rem;
+    gap: 1rem 0.8rem;
     min-height: 0;
     margin: 0;
     padding: 0 0 15px;
   }
 
   .polaroid--proposal {
-    width: min(78%, 280px);
+    width: 100%;
+  }
+
+  .polaroid-cluster .polaroid--three {
+    width: min(48%, 210px);
   }
 
   .polaroid--proposal img {
@@ -1344,9 +1358,9 @@ a {
 
 .story-art.polaroid-frame.polaroid-cluster {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: clamp(0.65rem, 1.5vw, 1.25rem);
+  gap: clamp(0.9rem, 2vw, 1.5rem);
   min-height: 0;
 }
 
@@ -4278,9 +4292,10 @@ and (orientation: landscape) {
   }
 
   .our-story-page .story-art.polaroid-frame.polaroid-cluster {
+    width: calc(100% + 2.5rem);
     min-height: 0;
-    margin: 0;
-    padding: 0 1rem 15px;
+    margin: 0 0 0 -1.25rem;
+    padding: 0 0 15px;
   }
 
   .our-story-page .story-block {
