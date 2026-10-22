@@ -316,8 +316,8 @@ body[data-gated] .site-header {
   }
 
   .polaroid-cluster {
-    min-height: 450px;
-    margin-bottom: 1.5rem;
+    min-height: 520px;
+    margin-bottom: 2rem;
   }
 
   .polaroid--proposal {
@@ -354,6 +354,37 @@ body[data-gated] .site-header {
 
 @media (hover: none) {
   .polaroid-cluster .polaroid--proposal { cursor: default; }
+
+  /* Touch browsers can leave :hover stuck after a tap; keep the photo stack at rest. */
+  .polaroid-cluster .polaroid--proposal:hover,
+  .polaroid-cluster .polaroid--proposal:focus-within {
+    width: min(50%, 185px);
+    box-shadow: 0 12px 28px rgba(46, 42, 34, 0.2);
+  }
+
+  .polaroid-cluster .polaroid--one:hover,
+  .polaroid-cluster .polaroid--one:focus-within {
+    z-index: 1;
+    top: 30px;
+    left: 6%;
+    transform: rotate(-8deg);
+  }
+
+  .polaroid-cluster .polaroid--two:hover,
+  .polaroid-cluster .polaroid--two:focus-within {
+    z-index: 1;
+    top: 82px;
+    left: 41%;
+    transform: rotate(5deg);
+  }
+
+  .polaroid-cluster .polaroid--three:hover,
+  .polaroid-cluster .polaroid--three:focus-within {
+    z-index: 1;
+    top: 205px;
+    left: 25%;
+    transform: rotate(-2deg);
+  }
 }
 
 /* Venue photograph styled as a large Polaroid below the Travel heading. */
