@@ -67,15 +67,14 @@ Everything is plain HTML, so text edits are just... editing the text. A few note
 
 ## 5. Forms (RSVP & Contact)
 
-GitHub Pages only serves static files — it can't receive form submissions on its own.
-Right now both forms show a friendly "thanks, but this is a preview" message on submit
-(see `main.js`) so you can test the design. Before launch, wire them up to a free form
-backend, e.g.:
+GitHub Pages only serves static files, so submissions need a form service. The RSVP
+form currently posts to Formspree (`rsvp.html`); its recipient inbox is configured in
+the Formspree account. The Contact page is still a preview-only form (`data-demo-form`).
 
-- **[Formspree](https://formspree.io)** — add `action="https://formspree.io/f/YOUR_ID"`
-  and `method="POST"` to the `<form>` tag, remove the `data-demo-form` attribute.
-- **Netlify Forms** — if you end up hosting on Netlify instead of GitHub Pages, add
-  `data-netlify="true"` to the `<form>` tag and it just works.
+For a couple-owned RSVP tracker, see [`rsvp-backend/README.md`](rsvp-backend/README.md).
+It contains a Google Apps Script endpoint that stores responses in a private Google
+Sheet and emails configured recipients. The couple must deploy it from their own
+Google account, then provide the web app URL before the website can be switched over.
 
 ## 6. Testing locally in VS Code
 

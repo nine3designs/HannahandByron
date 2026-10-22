@@ -269,7 +269,8 @@ body[data-gated] .site-header {
 }
 
 .polaroid--proposal img {
-  height: 170px;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 .polaroid--one img {
@@ -319,7 +320,8 @@ body[data-gated] .site-header {
   }
 
   .polaroid--proposal img {
-    height: 145px;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
