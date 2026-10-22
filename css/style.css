@@ -317,6 +317,7 @@ body[data-gated] .site-header {
 
   .polaroid-cluster {
     min-height: 450px;
+    margin-bottom: 1.5rem;
   }
 
   .polaroid--proposal {
