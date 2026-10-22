@@ -4278,6 +4278,11 @@ and (orientation: landscape) {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+.our-story-page main::before,
+.our-story-page main::after {
+  opacity: 0.4 !important;
+}
+
 /* Keep the mobile proposal stack clear of its caption and story copy. */
 @media (max-width: 780px) {
   .our-story-page .page-hero {
@@ -4314,6 +4319,6 @@ and (orientation: landscape) {
   .our-story-page main::after {
     width: 180px !important;
     height: 340px !important;
-    opacity: 0.7 !important;
+    opacity: 0.4 !important;
   }
 }
