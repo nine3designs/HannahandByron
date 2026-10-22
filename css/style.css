@@ -4281,19 +4281,23 @@ and (orientation: landscape) {
 /* Keep the mobile proposal stack clear of its caption and story copy. */
 @media (max-width: 780px) {
   .our-story-page .story-art.polaroid-frame.polaroid-cluster {
-    min-height: 682px;
-    margin: 0 0 calc(3rem - 38px);
-    padding: 1rem 1rem calc(6rem - 18px);
+    min-height: 480px;
+    margin: 0;
+    padding: 0 1rem 15px;
+  }
+
+  .our-story-page .story-block {
+    gap: 15px;
   }
 
   .our-story-page .story-block .story-copy {
-    padding: 1rem 1.1rem 2rem;
+    padding: 0 1.1rem 2rem;
   }
 
   .our-story-page main::before,
   .our-story-page main::after {
-    width: 105px !important;
-    height: 230px !important;
-    opacity: 0.16 !important;
+    width: 180px !important;
+    height: 340px !important;
+    opacity: 0.62 !important;
   }
 }
