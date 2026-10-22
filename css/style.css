@@ -4280,6 +4280,10 @@ and (orientation: landscape) {
 
 /* Keep the mobile proposal stack clear of its caption and story copy. */
 @media (max-width: 780px) {
+  .our-story-page .polaroid-cluster .polaroid--one {
+    padding-top: 7px;
+  }
+
   .our-story-page .story-art.polaroid-frame.polaroid-cluster {
     min-height: 480px;
     margin: 0;
