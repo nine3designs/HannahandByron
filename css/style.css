@@ -4280,6 +4280,18 @@ and (orientation: landscape) {
 
 /* Keep the mobile proposal stack clear of its caption and story copy. */
 @media (max-width: 780px) {
+  .our-story-page .page-hero {
+    padding-bottom: 1.5rem;
+  }
+
+  .our-story-page .story-gallery {
+    padding-top: 1.75rem;
+  }
+
+  .our-story-page .story-gallery > .story-block:first-child {
+    padding-top: 1.5rem;
+  }
+
   .our-story-page .polaroid-cluster .polaroid--one {
     padding-top: 7px;
   }
@@ -4302,6 +4314,6 @@ and (orientation: landscape) {
   .our-story-page main::after {
     width: 180px !important;
     height: 340px !important;
-    opacity: 0.8 !important;
+    opacity: 0.7 !important;
   }
 }
