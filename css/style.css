@@ -248,38 +248,28 @@ body[data-gated] .site-header {
 }
 
 .polaroid-cluster {
-  position: relative;
-  display: block;
-  min-height: 510px;
-  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(0.65rem, 1.5vw, 1.25rem);
+  min-height: 0;
+  padding: 1rem 0;
 }
 
 .polaroid--proposal {
-  position: absolute;
-  width: min(49%, 210px);
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  transform: none;
   transform-origin: center center;
+  z-index: auto;
+  cursor: default;
+  transition: none;
 }
 
 .polaroid--proposal img {
   height: 170px;
-}
-
-.polaroid--one {
-  top: 30px;
-  left: 6%;
-  transform: rotate(-8deg);
-}
-
-.polaroid--two {
-  top: 82px;
-  left: 41%;
-  transform: rotate(5deg);
-}
-
-.polaroid--three {
-  top: 205px;
-  left: 25%;
-  transform: rotate(-2deg);
 }
 
 .polaroid--one img {
@@ -316,41 +306,21 @@ body[data-gated] .site-header {
   }
 
   .polaroid-cluster {
-    min-height: 620px;
-    margin: 0 0 2rem;
-    padding: 1rem 1rem 4rem;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1.25rem;
+    min-height: 0;
+    margin: 0;
+    padding: 0 0 15px;
   }
 
   .polaroid--proposal {
-    width: min(50%, 185px);
+    width: min(78%, 280px);
   }
 
   .polaroid--proposal img {
     height: 145px;
   }
-
-  .polaroid-cluster .polaroid--proposal:hover,
-  .polaroid-cluster .polaroid--proposal:focus-within {
-    left: 7%;
-    width: 86%;
-  }
-}
-
-/* Bring a proposal snapshot forward when a guest points to it. */
-.polaroid-cluster .polaroid--proposal {
-  z-index: 1;
-  transition: left 0.45s cubic-bezier(.2,.7,.2,1), top 0.45s cubic-bezier(.2,.7,.2,1), width 0.45s ease, transform 0.45s cubic-bezier(.2,.7,.2,1), box-shadow 0.45s ease;
-  cursor: pointer;
-}
-
-.polaroid-cluster .polaroid--proposal:hover,
-.polaroid-cluster .polaroid--proposal:focus-within {
-  z-index: 5;
-  top: 16px;
-  left: 12%;
-  width: 76%;
-  transform: rotate(0deg);
-  box-shadow: 0 22px 42px rgba(46, 42, 34, 0.34);
 }
 
 
@@ -1368,6 +1338,14 @@ a {
   aspect-ratio: auto;
   min-height: 390px;
   overflow: visible;
+}
+
+.story-art.polaroid-frame.polaroid-cluster {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(0.65rem, 1.5vw, 1.25rem);
+  min-height: 0;
 }
 
 .story-copy .eyebrow {
@@ -4297,12 +4275,8 @@ and (orientation: landscape) {
     padding-top: 1.5rem;
   }
 
-  .our-story-page .polaroid-cluster .polaroid--one {
-    padding-top: 7px;
-  }
-
   .our-story-page .story-art.polaroid-frame.polaroid-cluster {
-    min-height: 480px;
+    min-height: 0;
     margin: 0;
     padding: 0 1rem 15px;
   }
