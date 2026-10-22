@@ -4302,6 +4302,6 @@ and (orientation: landscape) {
   .our-story-page main::after {
     width: 180px !important;
     height: 340px !important;
-    opacity: 0.62 !important;
+    opacity: 0.8 !important;
   }
 }
