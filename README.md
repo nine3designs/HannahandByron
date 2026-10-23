@@ -1,8 +1,8 @@
 # Hannah &amp; Byron — Wedding Website
 
-Wedding website: a "Save the Date" landing page with a
-password-gated entrance into the full site (Home, Our Story, Timeline, Travel, RSVP, FAQ,
-Contact). Built with plain HTML/CSS/JS so it works with just VS Code and GitHub Pages —
+Wedding website: a "Save the Date" landing page with a direct entrance into the full site
+(Home, Our Story, Timeline, Travel, RSVP, FAQ, Contact). Built with plain HTML/CSS/JS so
+it works with just VS Code and GitHub Pages —
 no frameworks, no npm install.
 
 ---
@@ -11,7 +11,7 @@ no frameworks, no npm install.
 
 ```
 wedding-site/
-├── index.html          ← Save the Date landing page + envelope password gate
+├── index.html          ← Save the Date landing page + Enter site link
 ├── home.html            ← full site homepage (nav, hero, countdown)
 ├── our-story.html
 ├── timeline.html
@@ -23,7 +23,6 @@ wedding-site/
 │   └── style.css        ← all styling lives here
 ├── js/
 │   ├── config.js         ← ⭐
-│   ├── lock.js            ← envelope open/close + password check + page gate
 │   ├── countdown.js       ← live countdown timer
 │   └── main.js            ← mobile nav, FAQ accordion, footer year, demo forms
 └── images/
@@ -32,8 +31,8 @@ wedding-site/
                               maximum browser compatibility — see note below)
 ```
 
-This is the one file that drives the couple's names, wedding date/time, venue, and the
-guest password. Everything else (the countdown, the lock screen) reads from it.
+This file drives the couple's names, wedding date/time, and venue. The countdown reads
+the wedding date from it.
 
 ```js
 const WEDDING_CONFIG = {
@@ -42,7 +41,6 @@ const WEDDING_CONFIG = {
   weddingDateISO: "2027-05-28T13:00:00",
   venueName: "The Glass House",
   venueLocation: "Staining",
-  guestPassword: "hannahandbyron",
 };
 ```
 

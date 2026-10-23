@@ -101,13 +101,13 @@
 }
 
 /* Carry the Save the Date flowers onto the main site pages. */
-body[data-gated] main {
+body.site-page main {
   position: relative;
   isolation: isolate;
 }
 
-body[data-gated] main::before,
-body[data-gated] main::after {
+body.site-page main::before,
+body.site-page main::after {
   content: "";
   position: fixed;
   z-index: -1;
@@ -119,16 +119,16 @@ body[data-gated] main::after {
   pointer-events: none;
 }
 
-body[data-gated] main::before {
+body.site-page main::before {
   left: -2rem;
 }
 
-body[data-gated] main::after {
+body.site-page main::after {
   right: -2rem;
   transform: scaleX(-1);
 }
 
-body[data-gated] .site-header {
+body.site-page .site-header {
   z-index: 10001;
 }
 
@@ -164,8 +164,8 @@ body[data-gated] .site-header {
 }
 
 @media (max-width: 780px) {
-  body[data-gated] main::before,
-  body[data-gated] main::after {
+  body.site-page main::before,
+  body.site-page main::after {
     top: auto;
     bottom: 0;
     width: 180px;
@@ -174,8 +174,8 @@ body[data-gated] .site-header {
     background-position: bottom;
   }
 
-  body[data-gated] main::before { left: -2.5rem; }
-  body[data-gated] main::after { right: -2.5rem; }
+  body.site-page main::before { left: -2.5rem; }
+  body.site-page main::after { right: -2.5rem; }
 }
 
 .polaroid-frame {

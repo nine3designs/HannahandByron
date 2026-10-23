@@ -17,42 +17,6 @@
 <body>
 
 <div class="paper-grain"></div>
-<!-- =========================================================
-     INTRO ENVELOPE ANIMATION
-     ========================================================= -->
-<div id="intro-envelope" class="intro-envelope" aria-label="Open invitation">
-
-  <div class="intro-envelope__scene">
-
-    <div class="intro-envelope__card">
-      <span class="intro-envelope__card-small">Save the Date</span>
-      <strong>Hannah</strong>
-      <span class="intro-envelope__and">&amp;</span>
-      <strong>Byron</strong>
-
-    </div>
-
-    <div class="intro-envelope__body"></div>
-
-    <div class="intro-envelope__flap"></div>
-
-    <button
-      type="button"
-      id="intro-seal"
-      class="intro-envelope__seal"
-      aria-label="Open invitation"
-    >
-      <span>H&amp;B</span>
-    </button>
-
-  </div>
-
-  <p class="intro-envelope__instruction">
-    Tap the seal to open
-  </p>
-
-</div>
-
 <main class="landing">
   <div class="invite-stage">
 
@@ -82,35 +46,14 @@
   </div>
 
   <div class="teaser">
-    <p>INVITATIONS TO FOLLOW.</p>
-    <button id="seal-trigger" class="seal-trigger" aria-haspopup="dialog">
-      <span class="seal">H&amp;B</span>
-      Guests, click here
-    </button>
+    <p>WE CAN’T WAIT TO CELEBRATE WITH YOU.</p>
+    <div class="home-story-cta-wrap">
+      <a class="home-story-cta" href="home.html">Enter site <span aria-hidden="true">&gt;</span></a>
+    </div>
   </div>
 
 </main>
 
-<!-- ===== Envelope password gate ===== -->
-<div id="lock-overlay" class="lock-overlay" aria-hidden="true">
-  <div id="envelope" class="envelope" role="dialog" aria-modal="true" aria-labelledby="lock-title">
-    <button id="lock-close" class="lock-close" aria-label="Close">&times;</button>
-    <div class="envelope-flap"></div>
-    <div class="envelope-back"></div>
-    <div class="envelope-card">
-      <p class="eyebrow">A little early, are we?</p>
-      <h2 id="lock-title">Enter the word from your invitation</h2>
-      <form id="lock-form" novalidate>
-        <input type="password" id="lock-password" name="password" placeholder="Password" autocomplete="off" required>
-        <button type="submit" class="btn btn--filled">Unlock our site</button>
-      </form>
-      <p id="lock-error" class="lock-error" role="alert" hidden>That's not quite right — check your invite and try again.</p>
-    </div>
-  </div>
-</div>
-
 <script src="js/config.js"></script>
-<script src="js/intro.js"></script>
-<script src="js/lock.js"></script>
 </body>
 </html>
