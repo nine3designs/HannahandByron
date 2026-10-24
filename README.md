@@ -1,9 +1,8 @@
-# Hannah &amp; Byron — Wedding Website
+# Hannah & Byron — Wedding Website
 
 Wedding website: a "Save the Date" landing page with a direct entrance into the full site
 (Home, Our Story, Timeline, Travel, RSVP, FAQ, Contact). Built with plain HTML/CSS/JS so
-it works with just VS Code and GitHub Pages —
-no frameworks, no npm install.
+it works with just VS Code and GitHub Pages - by Nine3 Weddings
 
 ---
 
@@ -67,12 +66,7 @@ Everything is plain HTML, so text edits are just... editing the text. A few note
 
 GitHub Pages only serves static files, so submissions need a form service. The RSVP
 form currently posts to Formspree (`rsvp.html`); its recipient inbox is configured in
-the Formspree account. The Contact page is still a preview-only form (`data-demo-form`).
-
-For a couple-owned RSVP tracker, see [`rsvp-backend/README.md`](rsvp-backend/README.md).
-It contains a Google Apps Script endpoint that stores responses in a private Google
-Sheet and emails configured recipients. The couple must deploy it from their own
-Google account, then provide the web app URL before the website can be switched over.
+the Formspree account. The Contact page is still a preview-only form (`data-demo-form`)
 
 ## 6. Testing locally in VS Code
 
@@ -80,26 +74,6 @@ Because the site avoids anything that needs a build step, you can just open
 `index.html` in a browser to preview it. For the smoothest experience (and to avoid
 any quirks some browsers have with local files), install the **Live Server** extension
 in VS Code, right-click `index.html`, and choose "Open with Live Server."
-
-## 7. Deploying with GitHub Pages
-
-1. In GitHub Desktop, create a new repository from this folder (or add these files to
-   an existing repo).
-2. Commit and push to GitHub.
-3. On GitHub.com, go to your repository → **Settings** → **Pages**.
-4. Under "Build and deployment," set **Source** to "Deploy from a branch," pick your
-   main branch and the `/ (root)` folder, then save.
-5. GitHub will give you a URL like `https://yourusername.github.io/your-repo-name/` —
-   that's your live site within a minute or two.
-
-
-## 9. Photos
-
-Every "photo coming soon" placeholder (in `our-story.html` and the empty `.story-art`
-blocks) is just a styled empty box — replace it with an `<img src="images/your-photo.jpg">`
-tag once you have real photos, and add an `object-fit: cover; width:100%; height:100%;`
-style so it fills the frame nicely.
-
 ---
 
 Made for Hannah &amp; Byron, 28.05.27 💛 Nine3 Weddings
